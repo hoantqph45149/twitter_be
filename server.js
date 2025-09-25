@@ -26,7 +26,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: ["https://twitter-fe.vercel.app"], // domain FE của mày
+    origin: ["https://twitter-fe-pied.vercel.app"], // domain FE của mày
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true, // cần nếu mày gửi cookie/token
   })

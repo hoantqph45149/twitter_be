@@ -120,7 +120,6 @@ export const createConversation = async (req, res) => {
         { user: req.user._id },
       ],
       owner: isGroup ? req.user._id : null,
-      admins: isGroup ? [req.user._id] : [],
     });
 
     await newConversation.save();

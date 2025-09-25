@@ -27,7 +27,7 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: ["https://twitter-fe-pied.vercel.app", "http://localhost:3000"], // domain FE của mày
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true, // cần nếu mày gửi cookie/token
   })
 );

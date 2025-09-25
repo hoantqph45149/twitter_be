@@ -2,6 +2,7 @@ import { v2 as cloudinary } from "cloudinary";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import express from "express";
+import cors from "cors";
 import connectMongoDB from "./db/connect.js";
 import authRoutes from "./routes/auth.route.js";
 import conversation from "./routes/conversation.route.js";
@@ -22,6 +23,14 @@ const PORT = process.env.PORT || 5000;
 
 app.use(express.json({ limit: "5mb" }));
 app.use(cookieParser());
+
+app.use(
+  cors({
+    origin: ["https://twitter-fe.vercel.app"], // domain FE của mày
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true, // cần nếu mày gửi cookie/token
+  })
+);
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
